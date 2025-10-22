@@ -1,4 +1,4 @@
-# Pygo: Pay PYUSD/ETH Over SMS (Sepolia)
+# Pygo: Pay PYUSD/ETH Over SMS 
 
 Pygo allows users to send and receive ETH and PYUSD on Ethereum Sepolia via basic SMS on feature phones with no internet access.
 
