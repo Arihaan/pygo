@@ -57,7 +57,7 @@ Response: "Price ETHUSD: <value>"
 
 1. Go to pygo backend
 ```
-cd pygo/pygo
+cd pygo
 ```
 
 2. Install dependencies
