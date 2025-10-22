@@ -127,6 +127,7 @@ https://your-server.com/sms/webhook
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Blockchain**: Ethereum (Sepolia), ERC-20 (PYUSD), ethers.js
+- **Price Feed**: Hermes API (Pyth Network)
 - **SMS Gateway**: Twilio
 - **Security**: AES encryption for wallet keys
 
