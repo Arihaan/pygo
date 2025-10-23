@@ -40,6 +40,12 @@ const parseConfirm = (text) => {
 const parseHelp = (text) => text.trim().toUpperCase() === 'HELP' ? { command: 'HELP' } : null;
 const parseYes = (text) => text.trim().toUpperCase() === 'YES' ? { command: 'YES' } : null;
 
+const parseWallet = (text) => {
+  const trimmed = text.trim().toUpperCase();
+  if (trimmed === 'WALLET') return { command: 'WALLET' };
+  return null;
+};
+
 const parsePrice = (text) => {
   const parts = text.trim().split(/\s+/);
   if (parts[0].toUpperCase() !== 'PRICE') return null;
@@ -49,7 +55,7 @@ const parsePrice = (text) => {
 
 const parseSmsCommand = (text) => {
   if (!text) return { error: 'Empty message.' };
-  const parsers = [parseRegister, parseBalance, parseSend, parseConfirm, parseHelp, parseYes, parsePrice];
+  const parsers = [parseRegister, parseBalance, parseSend, parseConfirm, parseWallet, parseHelp, parseYes, parsePrice];
   for (const parser of parsers) {
     const result = parser(text);
     if (result) return result;

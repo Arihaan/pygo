@@ -61,6 +61,9 @@ const handleIncomingSms = async (req, res) => {
       case 'YES':
         await handleYesCommand(phoneNumber);
         break;
+      case 'WALLET':
+        await handleWalletCommand(phoneNumber);
+        break;
       case 'PRICE':
         await handlePriceCommand(phoneNumber, parsedCommand.symbol);
         break;
@@ -292,6 +295,14 @@ const handleYesCommand = async (phoneNumber) => {
 module.exports = {
   handleIncomingSms,
 }; 
+async function handleWalletCommand(phoneNumber) {
+  try {
+    const user = await userService.getUserByPhone(phoneNumber);
+    await smsService.sendSms(phoneNumber, `Your wallet address: ${user.walletAddress}`);
+  } catch (e) {
+    await smsService.sendErrorMessage(phoneNumber, e.message || 'Failed to fetch wallet address');
+  }
+}
 
 async function handlePriceCommand(phoneNumber, symbol) {
   try {

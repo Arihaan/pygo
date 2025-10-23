@@ -51,7 +51,9 @@ const sendRegistrationConfirmation = async (phoneNumber) => {
   const message = 
 `Welcome to Pygo! Your wallet has been created.
 - To check your balance, text: BALANCE <PIN>
+- To get your wallet address, text: WALLET
 - To send money, text: SEND <RECIPIENT> <AMOUNT> <TOKEN> <PIN>
+- To get price, text: PRICE [SYMBOL]
 - For help, text: HELP`;
   
   return sendSms(phoneNumber, message);
@@ -136,10 +138,11 @@ const sendHelpMessage = async (phoneNumber) => {
   const message = 
 `Pygo Commands:
 - REGISTER <PIN> - Create a new wallet
+- WALLET - Get your wallet address
 - BALANCE <PIN> - Check your balance
 - SEND <RECIPIENT> <AMOUNT> <TOKEN> <PIN> - Send tokens
   Example: SEND +1234567890 10 PYUSD 1234
-- PRICE [SYMBOL] - Get price (e.g., PRICE ETHUSD)
+- PRICE [SYMBOL] - Get price (e.g., PRICE BTCUSD)
 - Supported tokens: ETH, PYUSD`;
   
   return sendSms(phoneNumber, message);
