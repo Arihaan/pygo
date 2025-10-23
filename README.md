@@ -2,6 +2,8 @@
 
 Pygo allows users to send and receive ETH and PYUSD on Ethereum Sepolia via basic SMS on feature phones with no internet access.
 
+<img width="2258" height="840" alt="Pygo Overview" src="https://github.com/user-attachments/assets/ff5ce6ac-e669-4c40-b417-e1234774dc9e" />
+
 ## 🔧 Core Idea
 
 Pygo bridges the gap between blockchain and traditional feature phones by enabling:
