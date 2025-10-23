@@ -49,7 +49,7 @@ const sendSms = async (to, message) => {
  */
 const sendRegistrationConfirmation = async (phoneNumber) => {
   const message = 
-`Welcome to Paytos! Your wallet has been created.
+`Welcome to Pygo! Your wallet has been created.
 - To check your balance, text: BALANCE <PIN>
 - To send money, text: SEND <RECIPIENT> <AMOUNT> <TOKEN> <PIN>
 - For help, text: HELP`;
@@ -97,7 +97,7 @@ Reply with YES to confirm or NO to cancel.`;
 const sendTransactionCompletion = async (phoneNumber, recipient, amount, token, newBalance) => {
   const message = 
 `Sent ${amount} ${token} to ${recipient}.
-New ${token} balance: ${newBalance.toFixed(token === 'SOL' ? 4 : 2)}`;
+New ${token} balance: ${newBalance.toFixed(token === 'ETH' ? 4 : 2)}`;
   
   return sendSms(phoneNumber, message);
 };
@@ -113,7 +113,7 @@ New ${token} balance: ${newBalance.toFixed(token === 'SOL' ? 4 : 2)}`;
 const sendTransactionReceipt = async (phoneNumber, sender, amount, token, newBalance) => {
   const message = 
 `You received ${amount} ${token} from ${sender}.
-New ${token} balance: ${newBalance.toFixed(token === 'SOL' ? 4 : 2)}`;
+New ${token} balance: ${newBalance.toFixed(token === 'ETH' ? 4 : 2)}`;
   
   return sendSms(phoneNumber, message);
 };
